@@ -68,56 +68,42 @@ function buildCharts(sample) {
     console.log(sampleInfo);
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.  
     var otuID = sampleInfo.otu_ids;
-      console.log(otuID);
+      //console.log(otuID);
     var otuLabel = sampleInfo.otu_labels;
-      console.log(otuLabel);
+      //console.log(otuLabel);
     var sampleValue = sampleInfo.sample_values;
-      console.log(sampleValue);
+      //console.log(sampleValue);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last.
-      //data = data.sort(function (a, b) {
-      //    return parseFloat(a.sample_values) - parseFloat(b.sample_values).reverse();
-      //});
-      //console.log(data);
 
-      //// Slice the first 10 objects for plotting
-
-      var topTenOtus = otuID.slice(0, 10);
+      var topTenOtus = otuID.slice(0, 10).reverse();
       console.log(topTenOtus);
 
-     //var yticks = sampleData.map(id => id.uto_ids);
-     //console.log(yticks);
+      var yticks = `OTU ${topTenOtus}`; //ADD MAP HERE TO ADD OTU TO EVERY ID
+     console.log(yticks);
 
  
     // 8. Create the trace for the bar chart. 
-    //var barData = [];
 
-      //var trace1 = {
-      //    x: data.map(row => row.sampleValue),
-      //    y: data.map(row => row.otuLabel),
-      //    //text: data.map(row => row.yticks),
-      //    type: "bar",
-      //    orientation: "h"
-      //};
+      var trace1 = {
+          x: sampleValue,
+          y: yticks,
+          text: otuLabel,
+          type: "bar",
+          orientation: "h"
+      };
 
-      // data
-      //var data = [trace1];
+      var barData = [trace1];
 
     // 9. Create the layout for the bar chart. 
-    //var barLayout = {
-    //      title: "Top 10 Bacteria Cultures Found",
-    //      margin: {
-    //          l: 100,
-    //          r: 100,
-    //          t: 100,
-    //          b: 100
-    //      }
-    //  };
+    var barLayout = {
+        title: "Top 10 Bacteria Cultures Found",
+      };
 
     // 10. Use Plotly to plot the data with the layout. 
-      //Plotly.newPlot("plot", data, barLayout);
+    Plotly.newPlot("plot", barData, barLayout);
 
   });
 }
