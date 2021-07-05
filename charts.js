@@ -161,6 +161,9 @@ function buildCharts(sample) {
     // Create the trace for the gauge chart.
         var gaugeData = [{
             value: washFreq,
+            title: {
+                text: `<b>Belly Button Washing Frequency</b> <br> Scrubs per Week`
+            },
             type: 'indicator',
             mode: 'gauge+number',
             gauge: {
@@ -179,8 +182,12 @@ function buildCharts(sample) {
     // Create the layout for the gauge chart.
         
         var gaugeLayout = {
-            title: {
-                text: `<b>Belly Button Washing Frequency</b> <br> Scrubs per Week` },       
+            margin: {
+                l: 25,
+                r: 25,
+                t: 150,
+                b: 50
+            }
         };
 
     // Use Plotly to plot the gauge data and layout.
