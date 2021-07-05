@@ -78,7 +78,7 @@ function buildCharts(sample) {
         var otuLabel = sampleInfo.otu_labels;
 
         var sampleValue = sampleInfo.sample_values;
-          console.log(sampleValue);
+          
 
   // Create the horizontal bar chart
       // 7. Create the yticks for the bar chart by getting top 10 otu_ids and map them in descending order
@@ -87,7 +87,8 @@ function buildCharts(sample) {
         var topTenOtus = otuID.slice(0, 10).reverse();
 
         var topTenSamples = sampleValue.slice(0, 10).reverse();
-           console.log(topTenSamples);
+
+        var topTenLabels = otuLabel.slice(0, 10).reverse();
 
         var yticks = topTenOtus.map(id => `OTU ${id}`);
            console.log(yticks);
@@ -97,7 +98,7 @@ function buildCharts(sample) {
         var trace1 = {
               x: topTenSamples,
               y: yticks,
-              text: otuLabel,
+              text: topTenLabels,
               type: "bar",
               orientation: "h"
           };
@@ -118,27 +119,33 @@ function buildCharts(sample) {
       // 1. Create the trace for the bubble chart.
 
         var bubbleData = [{
-          x: yticks,
-          y: topTenSamples,
+          x: otuID,
+          y: sampleValue,
           text: otuLabel,
           mode: 'markers',
           marker: {
-              color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)', 'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-              size: [40, 60, 80, 100]
+             color: otuID,
+             size: sampleValue
           }
         }];
 
       // 2. Create the layout for the bubble chart.
 
         var bubbleLayout = {
-            title: "Bacteria Cultures per Sample"
-            xaxis: "OTU ID"
-
+            title: "Bacteria Cultures per Sample",
+            xaxis: { title: "OTU ID" },
+            margin: {
+                l: 100,
+                r: 100,
+                t: 100,
+                b: 100
+            },
+            hovermode: 'closest'
            };
 
       // 3. Use Plotly to plot the data with the layout.
 
-      Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
    }); 
 };
