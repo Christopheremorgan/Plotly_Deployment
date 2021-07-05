@@ -177,9 +177,10 @@ function buildCharts(sample) {
         }];
 
     // Create the layout for the gauge chart.
-        // titleHtlm = <b>Belly Button Washing Frequency</b> < br > Scrubs per Week
+        
         var gaugeLayout = {
-            title: { text: "Belly Button Washing Frequency" },       
+            title: {
+                text: `<b>Belly Button Washing Frequency</b> <br> Scrubs per Week` },       
         };
 
     // Use Plotly to plot the gauge data and layout.
