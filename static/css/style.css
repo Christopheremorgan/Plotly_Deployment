@@ -1,0 +1,14 @@
+﻿body {
+  
+}
+
+.well {
+    color: #fa7348;
+}
+
+.jumbotron {
+    background-image: url("../images/microbes-sem.jpg");
+    background-size: 300% 300%;
+    text-align: center;
+    color: #f7f7f7;
+}

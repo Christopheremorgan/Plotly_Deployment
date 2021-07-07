@@ -113,7 +113,7 @@ function buildCharts(sample) {
 
       // Use Plotly to plot the data in a bar chart with the layout. 
 
-        Plotly.newPlot("bar", barData, barLayout);
+      Plotly.newPlot("bar", barData, barLayout, { responsive: true });
 
   // Create the bubble chart
       // Create the trace for the bubble chart.
@@ -145,7 +145,7 @@ function buildCharts(sample) {
 
       // Use Plotly to plot the data on a bubble chart with a defined layout.
 
-      Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+      Plotly.newPlot("bubble", bubbleData, bubbleLayout, { responsive: true });
   });
 
   // Create the wash frequency gauge
@@ -191,7 +191,8 @@ function buildCharts(sample) {
         };
 
     // Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
+
+        Plotly.newPlot("gauge", gaugeData, gaugeLayout, { responsive: true });
 
     }); 
 };
