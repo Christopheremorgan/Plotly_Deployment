@@ -1,7 +1,9 @@
 # plotly_deployment
 
 ## Project Overview
-An interactive dashboard was created to allow users to explore belly button biodiversity data from samples of research study participants.  Javascript was used to manipulate the json data provided and to add interactivity elements with event handlers.  Bootstrap was leveraged for styling and layout formatting, and Plotly was used to build the dynamic charts on the dashboard.
+An interactive dashboard was created to allow users to explore belly button biodiversity data from samples of research study participants.  Javascript was used to manipulate the json data provided and to add interactivity elements with event handlers.  Bootstrap was leveraged for styling and layout formatting, and Plotly was used to build the dynamic charts on the dashboard.  Finally, the dashboard has been publicly deployed to Github Pages and can be found at the following link.  
+
+[Try it out!](https://christopheremorgan.github.io/plotly_deployment/) 
 
 
 ## Interacting with the Dashboard
